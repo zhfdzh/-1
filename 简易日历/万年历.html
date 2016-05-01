@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简易日历</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+#main{ width:400px; height:400px; border-right:1px solid #69F;margin:40px 30px;position:relative; border:1px solid #69F;}
+#box{width:380px;height:400px;}
+#sel{width:360px;height:25px;line-height:25px;margin:10px 20px;}
+.select{width:120px;height:25px;line-height:25px; display:inline-block;}
+#back{width:60px;}
+#sel_year,#sel_month{margin-right:0px; height:25px; line-height:25px;}
+#year,#month{ height:22px; line-height:22px; text-align:center;}
+button{ display:inline-block; text-decoration:none;background-color:#D8D8D8 ;width:15px;height:25px;line-height:25px;text-align:center; border:1px solid #B9B9B9; /*padding:1px 0 2px 0;*/margin-top:0px;}
+.pre_mon,.next_mon{ color:#D5D5D5;}
+#sel_mon{margin-left:0px;margin-right:0px;height:25px;line-height:25px;}
+input{width:60px;height:25px;line-height:25px;}
+#calen{width:370px; height:280px;margin:10px 20px; }
+table{border-collapse:collapse; border:none;}
+th{border-top:1px solid #69F;text-align:center}
+tr{width:370px;height:50px;}
+td{width:50px;height:50px;text-align:center;font-size:20px;font-family:Arial, Helvetica, sans-serif; border-top:1px solid #CCC;}
+.today,td:hover{ background-color:#FC9;}
+#right{position:absolute;left:400px;top:0; background-color:#69F;}
+</style>
+
+<script type="text/javascript">
+
+	//限制输入框只能是数字	
+	function onlyNumber(){
+			var _self=this;
+			_self.value=_self.value.replace(/\D/g,'');
+		}
+		
+	//点击年份左侧按钮年份减一
+	function minyear(){
+			var inp_year=document.getElementById("year");
+			inp_year.value=parseInt(inp_year.value)-1;
+			if(inp_year.value<1900){inp_year.value=1900;}
+			var year=parseInt(document.getElementById("year").value);
+			var month=parseInt(document.getElementById("month").value);
+			dateInit(year,month);
+		}
+		
+	//点击年份右侧按钮年份加一
+	function addyear(){
+			var inp_year=document.getElementById("year");
+			inp_year.value=parseInt(inp_year.value)+1;
+			if(inp_year.value>2100){inp_year.value=2100;}
+			var year=parseInt(document.getElementById("year").value);
+			var month=parseInt(document.getElementById("month").value);
+			dateInit(year,month);
+		}
+		
+	//点击月份左侧按钮月份减一
+	function minmonth(){
+			var inp_month=document.getElementById("month");
+			inp_month.value=parseInt(inp_month.value)-1;
+			if(inp_month.value<1){
+				inp_month.value=12;
+				var inp_year=document.getElementById("year");
+				inp_year.value=parseInt(inp_year.value)-1;
+				if(inp_year.value<1900){inp_year.value=1900;}
+				}
+			var year=parseInt(document.getElementById("year").value);
+			var month=parseInt(document.getElementById("month").value);
+			dateInit(year,month);
+		}
+		
+	//点击月份右侧按钮月份加一
+	function addmonth(){
+			var inp_month=document.getElementById("month");
+			inp_month.value=parseInt(inp_month.value)+1;
+			if(inp_month.value>12){
+				inp_month.value=1;
+				var inp_year=document.getElementById("year");
+				inp_year.value=parseInt(inp_year.value)+1;
+				if(inp_year.value>2100){inp_year.value=2100;}
+				}
+			var year=parseInt(document.getElementById("year").value);
+			var month=parseInt(document.getElementById("month").value);
+			dateInit(year,month);
+		}
+		
+	//输入框输入年份或月份获取并跳转到该日期
+	function changeDate(year,month){
+			var date=new Date();
+			var year=year?year:date.getFullYear();
+			var month=month?month:date.getMonth()+1;
+			var inp_year=parseInt(document.getElementById("year").value);
+			var inp_month=parseInt(document.getElementById("month").value);
+			if(inp_month){
+				if(inp_month<1){month=12;inp_year=inp_year-1;}
+				else if(inp_month>12){month=1;inp_year=inp_year+1;}
+				else{month=inp_month;}
+				}		
+			if(inp_year){
+				if(inp_year<1900){year=1900;}
+				else if(inp_year>2100){year=2100;}
+				else{year=inp_year;}
+				}
+			
+			dateInit(year,month);
+		}
+	
+	//获取某月的第一天是星期几
+	function getFirstday(year,month){
+			var date=new Date();
+			date.setFullYear(year);
+			date.setMonth(month-1);
+			date.setDate(1);
+			return date.getDay();
+			}
+			
+		//通过类名获取元素
+	function getByClass(oPare,cla){
+			var arr_obj=oPare.getElementsByTagName("*");
+			var cla_obj=[];
+			for(var i=0;i<arr_obj.length;i++){
+				var arr=arr_obj[i].className.split(" ");	
+				for(var j in arr){
+					if(arr[j]==cla){
+							cla_obj.push(arr_obj[i]);
+							break;
+						}
+					}
+				}	
+			return cla_obj;
+		}
+		
+	//移除某元素的class
+	function removeClass(obj,cla){
+			var arr=obj.className.split(' ');
+			for(var i in arr){
+				if(arr[i]==cla){arr[i]=''}
+				}
+			obj.className=arr.join(' ');
+		}
+	
+	//月份显示
+	function dateInit(year,month){
+			var date=new Date();
+			var year=year?year:date.getFullYear();
+			var month=month?month:date.getMonth()+1; 
+			var day=date.getDate();
+			var week=getFirstday(year,month);
+			var td_obj=document.getElementsByTagName("td");
+			var max_day=new Date(year,month,0).getDate();
+			var pre_max_day=new Date(year,month-1,0).getDate();
+			var today= getByClass(document.getElementsByTagName("table")[0],"today");
+			var pre_mon=getByClass(document.getElementsByTagName("table")[0],"pre_mon")
+			var next_mon=getByClass(document.getElementsByTagName("table")[0],"next_mon")
+			for(var i in today){removeClass(today[i],"today");}
+			for(var i in pre_mon){removeClass(pre_mon[i],"pre_mon");}
+			for(var i in next_mon){removeClass(next_mon[i],"next_mon");}
+			for(var i=0,j=1,k=1;i<42;i++){
+				if(i<week){
+					 td_obj[i].innerHTML=pre_max_day-week+1;
+					 td_obj[i].setAttribute("class","pre_mon");
+				 pre_max_day++;
+					}
+				 else if(i<max_day+week){
+					td_obj[i].innerHTML=j;
+					if(day==j){ td_obj[i].setAttribute("class","today");}
+					j++; 
+				 }else{
+					 td_obj[i].innerHTML=k;
+					 td_obj[i].className="next_mon";
+					 k++;
+					 }
+			 }
+			 document.getElementById("year").value=year;
+			 document.getElementById("month").value=month;	
+		}
+	
+	window.onload=function(){
+			var back=document.getElementById("butt");
+			var input=document.getElementsByTagName("input");
+			var a_left= getByClass(document.getElementById("sel"),"a_left");
+			var a_right= getByClass(document.getElementById("sel"),"a_right");
+			
+			dateInit();
+			document.getElementById("butt").onclick=function(){dateInit();}
+			document.getElementById("min_year").onclick=function(){minyear();}
+			document.getElementById("add_year").onclick=function(){addyear();}
+			document.getElementById("min_month").onclick=function(){minmonth();}
+			document.getElementById("add_month").onclick=function(){addmonth();}
+			for(var i=0; i<input.length;i++){
+				input[i].addEventListener('keyup',onlyNumber,false);
+				input[i].addEventListener('change',changeDate,false);
+			}
+	 }
+</script>
+
+</head>
+<body>
+	<div id="main">
+         <div id="box">
+              <div id="sel">
+                  <div id="sel_year" class="select">
+                      <button class="a_left" id="min_year"><</button><input id="year" type="text" /><button class="a_right" id="add_year">></button>
+                  </div>
+                  <div id="sel_month" class="select">
+                     <button href="#" class="a_left" id="min_month"><</button><input id="month"  type="text"/><button class="a_right" id="add_month">></button> 
+                  </div>
+                  <div id="back" class="select">
+                      <input id="butt" type="button" value="返回今天"/>
+                  </div>
+               </div>
+               <div id="calen">
+                  <table id="calen_table" >
+                    <tr id="calen_thead">
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>                            </tr>
+                    <tr id="calen_tr1" class="calen_tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="calen_tr2" class="calen_tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="calen_tr3" class="calen_tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="calen_tr4" class="calen_tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="calen_tr5" class="calen_tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="calen_tr5" class="calen_tr">
+                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                  </table>
+              </div>
+         </div>
+    </div>
+</body>
+</html>
