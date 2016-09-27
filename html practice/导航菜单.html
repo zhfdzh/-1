@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $('a').hover(
+	function(){$(this).animate({"width":"160px"},200)},
+	function(){$(this).animate({"width":"80px"},200)}
+	);
+	
+});
+</script>
+<style type="text/css">
+*{ margin:0; padding:0; font-size:16px; font-family:Arial, Helvetica, sans-serif}
+ul{ list-style:none;height:30px;border-bottom:5px solid #C36; margin-top:30px;}
+li{float:left}
+a{ text-decoration:none;display:block;height:30px;line-height:30px;background-color:#3FF;margin-right:1px;text-align:center;}
+a:link { background-color:#FFF ;color:red; text-decoration: none;}
+a:visited{ background-color:gray}
+ a:hover{background-color:#F00;color:#FF0;height:40px; line-height:40px; margin-top:-10px;}
+a:active{background-color:#FF0;color:#F03}
+
+
+</style>
+</head>
+
+<body>
+<ul class="on">
+	<li><a id="1" href="#1">首页</a></li>
+     <li><a id="2" href="#2">新闻资讯</a></li>
+    <li><a id="3" href="#3">产品目录</a></li>
+    <li><a id="4" href="#4">联系我们</a></li>
+    <li><a id="5" href="#5">联系我们</a></li>
+</ul>
+</body>
+</html>

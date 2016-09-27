@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+a{ color:#666; text-decoration:none;}
+body{ padding:20; color:#666; margin:30px 40px;}
+.fl{ float:left;}
+.ft{ float:right;}
+table{ border:0; border-collapse:collapse; text-align:center; width:950px;}
+th,td{ border:1px solid #F00;}
+th{ background:#6FC; height:30px; border-top:3px solid #60F;}
+td{ padding:10px; color:#444;}
+tbody tr:hover{ background: #CFF;}
+.check-box{ width:60px;}
+.info{ width:300px;}
+img { width:100px; height:80px; margin-right:10px;float:left;}
+.info span{ width:180px; text-align:left; float:left; margin-top:20px;}
+.price{ width:130px;}
+.count{ width:90px;}
+.count .reduce,.count .count-input,.count .add{ float:left; margin-right:-1px; z-index:0; position:relative;}
+.count .add, .count .reduce{ height:23px; width:17px; border:1px solid #e5e5e5; background:#f0f0f0; text-align:center; line-height:23px; color:#444;}
+.count .add:hover, .count .reduce:hover{ color:#f50; z-index:3; border-color:#f60; cursor:pointer;} 
+.count .count-input{ width:50px; height:23px; line-height:15px; border:1px solid #aaa; color:#343434; text-align:center; padding:4px,0; background-color:#fff; z-index:2;}
+.total{ width:150px; color:red; font-weight:bold;}
+.oprate{width:80px;}
+.oprate span:hover, a:hover{cursor:pointer; color:red; text-decoration:underline;}
+.foot{ width:935px; margin-top:10px; color:#666; height:48px; border:1px solid #c8c8c8; background-color:#eaeaea; background-image:linear-gradient(RGB(241,241,241),RGB(226,226,226)); position:relative; z-index:8;}
+.foot div, .foot a{ height:48px; line-height:48px;}
+.foot .select-all{ width:100px; height:48px; line-height:48px; padding-left:5px; color:#666;}
+.foot .jiesuan{ border-left:1px solid #c8c8c8; width:100px; text-align:center; color:#000; font-weight:bold; background:RGB(238,238,238); cursor:pointer;}
+.foot .total{ margin:0;20px; cursor:pointer;}
+.foot .selecttotal,.foot #pricetotal{ color:red; font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
+.foot .select{ cursor:pointer;}
+.foot .select .arrow{ position:relative; top:-3px; margin-left:3px;}
+.foot .select .down{ position:relative; top:3px; display:none;}
+
+.foot .select:hover .arrow{ color:red;}

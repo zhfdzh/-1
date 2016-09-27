@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0;padding:0;}
+#first{ height:43px; background-color:;line-height:43px;}
+.img1{margin-top:-7px;;padding:0;width:107px;height:43px; vertical-align:middle;}
+.inp{ margin-top:6px; margin-bottom:7px;width:500px; height:30px; line-height:30px;}
+.butt,#zhfgtbao,#shezhi{height:30px;width:80px;margin:100;line-height:30px; margin-top:6px; margin-bottom:7px;}
+#zhfgtbao,#shezhi,.xiaoxi,.shouye{float:right; margin-left:10px;}
+#second{height:40px; background-color:#CCC; line-height:40px;}
+.sec{ width::70px;}
+.second-1{float:left;padding-left:107px;}
+.second-2{float:left;padding-left:17px;}
+.second-3{float:left;padding-left:15px;}
+.second-4{float:left;padding-left:15px;}
+.second-5{float:left;padding-left:17px;}
+.second-6{float:left;padding-left:17px;}
+.second-7{float:left;padding-left:17px;}
+.second-8{float:left;padding-left:17px;}
+.second-9{float:left;padding-left:17px;}
+.second-10{float:left;padding-left:17px;}
+#third{height:30px; line-height:30px; background-color:;}
+.third-1{margin-left:107px;}
+.third-2{position:absolute;top:83px;left:550px;}
+#forth,.lefttop,.leftmid{margin:10px;}
+.left{position: absolute;left: 107px;top110px;width: 663px;border-right: 1px solid #CCC;top: 127px;height: 411px;}
+.right{position:absolute;top:130px;left:770px;}
+.lefttop{line-height:24px;}
+.leftmidbott{border:#FCF solid 1px; width:500px; line-height:24px;}
+.righttop,.rightmid{height:150px;padding:10px;}
+.righttop1{float:left;padding:25px;width:80px;height:120px;text-align:center}
+.righttop2,.righttop3,.righttop4{float:left;padding:15px;width:80px;height:150px;text-align:center}
+.rightmid1{float:left;padding:25px;width:80px;height:150px;text-align:center;}
+.rightmid2,.rightmid3,.rightmid4{float:left;padding:15px; width:80px;height:150px;text-align:center;}
+

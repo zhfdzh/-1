@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全屏滑动效果</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+html,body{height:100%;overflow:hidden; }
+#container,.sections,.section{height:100%;}
+#section0,#section1,#section2,#section3{background-color:#000; background-size:cover; background-position:50% 50%; text-align:center; color:white;}
+#section0{ background-image:url(../../%E4%B8%B4%E6%97%B6/%E8%B4%AD%E7%89%A9%E8%BD%A6%EF%BC%88%E6%BA%90%E4%BB%A3%E7%A0%81%EF%BC%89ok/images/1.jpg)}
+#section1{background-image:url(../../%E4%B8%B4%E6%97%B6/%E8%B4%AD%E7%89%A9%E8%BD%A6%EF%BC%88%E6%BA%90%E4%BB%A3%E7%A0%81%EF%BC%89ok/images/2.jpg)}
+#section2{background-image:url(../../%E4%B8%B4%E6%97%B6/%E8%B4%AD%E7%89%A9%E8%BD%A6%EF%BC%88%E6%BA%90%E4%BB%A3%E7%A0%81%EF%BC%89ok/images/3.jpg)}
+#section3{background-image:url(../../%E4%B8%B4%E6%97%B6/%E8%B4%AD%E7%89%A9%E8%BD%A6%EF%BC%88%E6%BA%90%E4%BB%A3%E7%A0%81%EF%BC%89ok/images/4.jpg)}
+.left{float:left;width:25%;}
+
+</style>
+
+</head>
+
+<body>
+<div id="container" style="width:400%">
+	<div class="sections">
+    	<div class="section left" id="section0">
+        	<h3>this is the page</h3>
+        </div>
+        <div class="section left" id="section1">
+        	<h3>this is the page</h3>
+        </div>
+        <div class="section left" id="section2">
+        	<h3>this is the page</h3>
+        </div>
+        <div class="section left" id="section3">
+        	<h3>this is the page</h3>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$("#container").PageSwitch({diraction:"herizontal"});
+$("#container").PageSwitch("init")
+
+
+</script>
+</body>
+</html>

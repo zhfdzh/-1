@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
+ <link rel="stylesheet" href="D:/学习编程/JS/html/模拟购物车.css"/>
+ <script type="text/javascript" src="D:/学习编程/JS/html/模拟购物车.js"></script>
+</head>
+<body>
+<table id="table">
+ <thead>
+  <tr>
+  <th><input class="check-all check" type="checkbox" />全选</td>
+  <th>商品信息</td>
+  <th>单价（元）</td>
+  <th>数量</td>
+  <th>金额（元）</td>
+  <th>操作</td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+  <td class="check-box"><input class="check-one check" type="checkbox"/></td>
+  <td class="info"><img src="../picture/1.jpg" /><span>Casio/卡西欧 EX-TR350</span></td>
+  <td class="price">5999.88</td>
+  <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+  <td class="total">5999.88</td>
+  <td class="oprate"><span class="delete">删除</span></td>
+  </tr>
+  
+  <tr>
+  <td class="check-box"><input class="check-one check" type="checkbox"/></td>
+  <td class="info"><img src="../picture/2.jpg"/><span>Canon/佳能 PowerShot SX50 HS</span></td>
+  <td class="price">3888.80</td>
+  <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+  <td class="total">3888.80</td>
+  <td class="oprate"><span class="delete">删除</span></td>
+  </tr>
+  
+  <tr>
+  <td class="check-box"><input class="check-one check" type="checkbox"/></td>
+  <td class="info"><img src="../picture/3.jpg"/><span>Sony/索尼 DSC-WX300</span></td>
+  <td class="price">1428.50</td>
+  <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+  <td class="total">1428.50</td>
+  <td class="oprate"><span class="delete">删除</span></td>
+ <tr>
+ 
+ <td class="check-box"><input class="check-one check" type="checkbox"/></td>
+  <td class="info"><img src="../picture/4.jpg"/><span>Fujifilm/富士 instax mini 25</span></td>
+  <td class="price">640.6</td>
+  <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+  <td class="total">640.6</td>
+  <td class="oprate"><span class="delete">删除</span></td>
+  </tr>
+ </tbody>
+</table> 
+ 
+  <div class="foot" id="foot">
+     <label class="fl select-all"><input type="checkbox" class="ckeck-all check" />&nbsp;全选</label>
+   <a class="fl delete" id="deleteall" href="javascript:;">删除</a>
+    <div class="ft jiesuan">结算</div>
+   <div class="ft total">合计：￥<span id="pricetotal">0.00</span></div>
+   <div class="ft select">已选商品
+          <span class="selecttotal">0</span>件
+          <span class="arrow up">︽</span>
+          <span class="arrow down">︾</span> </div>
+  </div>
+
+</body>
+</html>

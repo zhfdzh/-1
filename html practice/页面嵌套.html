@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+#div1{
+	width:100%;
+	height:800px;
+	background-color:#FF9;
+	
+	}
+	
+	#div2{
+	height:500px;
+	background-color:#F0C;
+	
+	}
+
+
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+/*var ajaxobj=new AJAXRequest; 
+ajaxobj.method="GET";   // 设置请求方式为GET
+ajaxobj.url="模拟购物车.html"  // 响应的URL,以后可以改为一些动态处理页,会用Ajax的都知道，这在页里可以有目的返回不同的数据
+// 设置回调函数，输出响应内容,因为是静态页（这是我的需求嘛）所以所有内容都过来了
+ajaxobj.callback=function(xmlobj) {
+     document.getElementById('div1).innerHTML = xmlobj.responseText;
+}
+ajaxobj.send();  */
+
+
+ $("#div1").load("通知.html");
+</script>
+</head>
+
+<body>
+<div id='div1'>
+	
+
+</div>
+<div id="div2">
+<video  preload controls>
+  <source src="http://data.video.qiyi.com/videos/movie/20110908/256f650af5658a7373f82cff9de0bb29.f4v" />
+  <embed src="http://data.video.qiyi.com/videos/movie/20110908/256f650af5658a7373f82cff9de0bb29.f4v"></embed>
+
+</video>
+
+
+</div>
+
+</body>
+</html>

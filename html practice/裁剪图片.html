@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="裁剪图片JS事件.js"></script>
+<style  type="text/css">
+body{ background: #333;margin:0;padding:0;}
+#box{ position: absolute;top:100px;left:200px;
+      width:421px;
+	  height:316px; 
+}
+	img{z-index:1;}
+	#img1{ position: absolute; opacity: 0.2}
+	#img2{position: absolute; clip:rect(0px,100px,100px,0px);}
+	
+	#main{
+	position: absolute;
+	width: 150px;
+	height: 120px;
+	border: 1px #C00 solid;
+	z-index: 2;
+	cursor: move;
+	top:30px;
+	left:40px;
+}
+	.smldiv{ position:absolute; background:#FFF; width:8px; height:8px;}
+	#left-up{ top:-4px; left:-4px; cursor:nw-resize;}
+	#up{ top:-4px; left:50%; margin-left:-4px; cursor:n-resize;}
+	#right-up{ top:-4px; right:-4px; cursor:ne-resize;}
+	#right{ top:50%; margin-top:-4px; right:-4px; cursor:e-resize;}
+	#right-down{ bottom:-4px; right:-4px; cursor:se-resize;}
+	#down{ left:50%; margin-left:-4px; bottom:-4px; cursor:s-resize;}
+	#left-down{left:-4px; bottom:-4px; cursor:sw-resize;}
+	#left{left:-4px;top:50%; margin-top:-4px; cursor:w-resize;}
+	
+
+	#prev{position: absolute;top:100px;left:700px;width:421px;height:316px;}
+	#img3{position: absolute;top:0;left:0;}
+
+</style>
+</head>
+<div id="box">
+	<img id="img1" src="../picture/图片1.png" />
+    <img id="img2" src="../picture/图片1.png"/>
+    <div id="main" class="main">
+        <div id="left-up" class="smldiv"></div>
+        <div id="up" class="smldiv"></div>
+        <div id="right-up" class="smldiv"></div>
+        <div id="right" class="smldiv"></div>
+        <div id="right-down" class="smldiv"></div>
+        <div id="down" class="smldiv"></div>
+        <div id="left-down" class="smldiv"></div>
+        <div id="left" class="smldiv"></div>
+    </div>
+          
+</div>
+<div id="prev">
+<img id="img3" src="../picture/图片1.png" />
+</div>
+
+<body>
+</body>
+</html>
