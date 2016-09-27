@@ -4,25 +4,123 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>简易日历</title>
 <style type="text/css">
-*{margin:0;padding:0;}
-#main{ width:400px; height:400px; border-right:1px solid #69F;margin:40px 30px;position:relative; border:1px solid #69F;}
-#box{width:380px;height:400px;}
-#sel{width:360px;height:25px;line-height:25px;margin:10px 20px;}
-.select{width:120px;height:25px;line-height:25px; display:inline-block;}
-#back{width:60px;}
-#sel_year,#sel_month{margin-right:0px; height:25px; line-height:25px;}
-#year,#month{ height:22px; line-height:22px; text-align:center;}
-button{ display:inline-block; text-decoration:none;background-color:#D8D8D8 ;width:15px;height:25px;line-height:25px;text-align:center; border:1px solid #B9B9B9; /*padding:1px 0 2px 0;*/margin-top:0px;}
-.pre_mon,.next_mon{ color:#D5D5D5;}
-#sel_mon{margin-left:0px;margin-right:0px;height:25px;line-height:25px;}
-input{width:60px;height:25px;line-height:25px;}
-#calen{width:370px; height:280px;margin:10px 20px; }
-table{border-collapse:collapse; border:none;}
-th{border-top:1px solid #69F;text-align:center}
-tr{width:370px;height:50px;}
-td{width:50px;height:50px;text-align:center;font-size:20px;font-family:Arial, Helvetica, sans-serif; border-top:1px solid #CCC;}
-.today,td:hover{ background-color:#FC9;}
-#right{position:absolute;left:400px;top:0; background-color:#69F;}
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #main {
+        width: 400px;
+        height: 400px;
+        margin: 40px 30px;
+        position: relative;
+        border: 1px solid #69F;
+    }
+
+    #box {
+        width: 380px;
+        height: 400px;
+    }
+
+    #sel {
+        width: 360px;
+        height: 25px;
+        line-height: 25px;
+        margin: 10px 20px;
+    }
+
+    .select {
+        width: 120px;
+        height: 25px;
+        line-height: 25px;
+        display: inline-block;
+    }
+
+    #back {
+        width: 60px;
+    }
+
+    #sel_year, #sel_month {
+        margin-right: 0px;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    #year, #month {
+        height: 22px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    button {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #D8D8D8;
+        width: 15px;
+        height: 26px;
+        line-height: 25px;
+        text-align: center;
+        border: 1px solid #B9B9B9; /*padding:1px 0 2px 0;*/
+        position: relative;
+        top: 1px;
+    }
+
+    .pre_mon, .next_mon {
+        color: #D5D5D5;
+    }
+
+    #sel_mon {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    input {
+        width: 60px;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    #calen {
+        width: 370px;
+        height: 280px;
+        margin: 10px 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: none;
+    }
+
+    th {
+        border-top: 1px solid #69F;
+        text-align: center
+    }
+
+    tr {
+        width: 370px;
+        height: 50px;
+    }
+
+    td {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-top: 1px solid #CCC;
+    }
+
+    .today, td:hover {
+        background-color: #FC9;
+    }
+
+    #right {
+        position: absolute;
+        left: 400px;
+        top: 0;
+        background-color: #69F;
+    }
 </style>
 
 <script type="text/javascript">
